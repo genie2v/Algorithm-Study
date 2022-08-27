@@ -2,14 +2,14 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr) {
-        int[] answer = {-1};
-        ArrayList<Integer> arrList = new ArrayList<Integer>();
-        int min = 9999;
         if(arr.length==1) {
+            int[] answer = {-1};
             return answer;
         }
         
-        answer = new int[arr.length-1];
+        int[] answer = new int[arr.length-1];
+        ArrayList<Integer> arrList = new ArrayList<Integer>();
+        int min = 9999;
         
         for(int i : arr) {
             arrList.add(i);
