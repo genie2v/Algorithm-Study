@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Solution {
     // Stack
-    /*public Stack<Integer> solution(int []arr) {
+    public Stack<Integer> solution(int []arr) {
         Stack<Integer> answer = new Stack<>();
         
         for(int i=0; i<arr.length; i++){
@@ -16,9 +16,9 @@ public class Solution {
         }
 
         return answer;
-    }*/
+    }
     // ArrayList
-    public int[] solution(int []arr) {
+    /* public int[] solution(int []arr) {
         ArrayList<Integer> arrList = new ArrayList<Integer>();
         
         int num = -9999;
@@ -35,5 +35,5 @@ public class Solution {
         }
         
         return answer;
-    }
+    } */
 }
