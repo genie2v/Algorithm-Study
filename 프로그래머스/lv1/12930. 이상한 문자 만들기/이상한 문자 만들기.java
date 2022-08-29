@@ -4,14 +4,14 @@ class Solution {
         String[] words = s.split("");
         int idx = 0;
         
-        for(String str : words) {
-            if(str.equals(" ")) {
+        for(String word : words) {
+            if(word.equals(" ")) {
                 idx = 0;
-                answer += str;
+                answer += word;
                 continue;
             }
             
-            answer += ((idx%2)==0) ? str.toUpperCase() : str.toLowerCase();
+            answer += ((idx%2)==0) ? word.toUpperCase() : word.toLowerCase();
             idx++;
         }
         
