@@ -1,10 +1,8 @@
 class Solution {
+    public static boolean prime[] = new boolean[48776];
     
-    public static boolean prime[] = new boolean[10001];
-    
-    public int solution(int[] nums) {
+    public int solution(int[] nums) {  
         int answer = 0;
-        
         getPrime();
         
         for(int i=0;i<nums.length-2;i++) {
@@ -20,6 +18,7 @@ class Solution {
     }
     
     public static void getPrime(){
+        // true 소수X, false 소수
         prime[0] = prime[1] = true;
         
         for(int i=2;i<Math.sqrt(prime.length);i++) {
