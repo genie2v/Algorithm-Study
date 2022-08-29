@@ -20,7 +20,7 @@ class Solution {
     }
     
     public static void getPrime(){
-        prime[0]=prime[1]=true;
+        prime[0] = prime[1] = true;
         
         for(int i=2;i<Math.sqrt(prime.length);i++) {
             if(prime[i]) continue;
