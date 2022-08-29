@@ -1,10 +1,10 @@
 -- 코드를 입력하세요
--- SELECT name 
--- from (select name 
---       from animal_ins 
---       order by datetime)
--- where rownum < 2;
-
+-- 방법1
+-- SELECT NAME
+--   FROM (SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME)
+--  WHERE ROWNUM < 2;
+  
+-- 방법2
 SELECT NAME
   FROM ANIMAL_INS
  WHERE DATETIME = (SELECT MIN(DATETIME) FROM ANIMAL_INS);
