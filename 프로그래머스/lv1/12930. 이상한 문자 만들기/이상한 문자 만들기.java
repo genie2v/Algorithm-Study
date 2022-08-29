@@ -10,11 +10,8 @@ class Solution {
                 answer += str;
                 continue;
             }
-            if((idx%2)==0) {
-                answer += str.toUpperCase();
-            } else {
-                answer += str.toLowerCase();
-            }
+            
+            answer += ((idx%2)==0) ? str.toUpperCase() : str.toLowerCase();
             idx++;
         }
         
