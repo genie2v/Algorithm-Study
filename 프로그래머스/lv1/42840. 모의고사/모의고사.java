@@ -21,12 +21,12 @@ class Solution {
         for(int i=0;i<3;i++) {
             if(max==score[i]) arrList.add(i+1);
         }
-        System.out.println(arrList);
+        
         int[] answer = new int[arrList.size()];
         for(int i=0;i<answer.length;i++) {
             answer[i] = arrList.get(i);
         }
-        Arrays.sort(answer);
+        
         return answer;
     }
 }
