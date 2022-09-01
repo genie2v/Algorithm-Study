@@ -3,13 +3,11 @@ class Solution {
         String[] answer = new String[n];
 
         for(int i=0;i<n;i++) {
-            int sum = arr1[i] | arr2[i];
-            String s = Integer.toBinaryString(sum);
-
-            while(s.length()<n) {
-                s = "0" + s;
+            String pwd = Integer.toBinaryString(arr1[i] | arr2[i]);
+            while(pwd.length()<n) {
+                pwd = "0" + pwd;
             }
-            answer[i] = s;
+            answer[i] = pwd;
         }
         
         for(int i=0;i<answer.length;i++) {
