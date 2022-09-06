@@ -21,10 +21,13 @@ class Solution {
         }
         // 7단계
         if(new_id.length()<=2) {
-            int len = new_id.length();
-            String lastChar = new_id.substring(new_id.length()-1);
-            for(int i=0;i<3-len;i++) {
-                new_id += lastChar;
+            // int len = new_id.length();
+            // String lastChar = new_id.substring(new_id.length()-1);
+            // for(int i=0;i<3-len;i++) {
+            //     new_id += lastChar;
+            // }
+            while(new_id.length()<3) {
+                new_id += new_id.charAt(new_id.length()-1);
             }
         }
 
