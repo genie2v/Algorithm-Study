@@ -11,7 +11,7 @@ class Solution {
             for(int j=0;j<stages.length;j++) {
                 if(stages[j]==i) failUsr++;
             }
-            double fail = (failUsr==0) ? 0.0 : failUsr/(double)player;
+            double fail = (player==0) ? 0.0 : failUsr/(double)player;
             hashMap.put(i,fail);
             player = player - failUsr;
         }
