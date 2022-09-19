@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int solution(int cacheSize, String[] cities) {
         int answer = 0;
-        LinkedList<String> cache = new LinkedList<String>();
+        Queue<String> cache = new LinkedList<String>();
         
         if(cacheSize==0) return cities.length * 5;
         
@@ -12,14 +12,14 @@ class Solution {
             
             // cache hit
             if(cache.remove(city)) {
-                cache.addFirst(city);
+                cache.add(city);
                 answer += 1;
             } else {
                 // cache miss
                 if(cache.size()==cacheSize) {
-                    cache.removeLast();
+                    cache.poll();
                 }
-                cache.addFirst(city);
+                cache.add(city);
                 answer += 5;
             }
         }
