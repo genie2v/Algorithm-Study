@@ -15,8 +15,6 @@ class Solution {
             }
         }
         
-        for(int n : citations) System.out.print(n + " ");
-        
         for(int i=1;i<=citations.length;i++) {
             if(citations[i-1]<i) {
                 answer = i-1;
