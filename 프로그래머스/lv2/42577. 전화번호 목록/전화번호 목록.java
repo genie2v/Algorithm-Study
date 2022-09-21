@@ -9,11 +9,11 @@ class Solution {
             hashSet.add(number);
         }
         
-        for(int i=0;i<phone_book.length;i++) {
+        for(int i=0;i<hashSet.size();i++) {
             for(int j=0;j<phone_book[i].length();j++) {
                 if(hashSet.contains(phone_book[i].substring(0,j))) {
                     answer = false;
-                    break;
+                    return answer;
                 }
             }
         }
