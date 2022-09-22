@@ -8,18 +8,16 @@ class Solution {
         for(int n : scoville) queue.add(n);
         
         int count = 0;
-        while(!queue.isEmpty()) {  
-            if(queue.peek()>=K) {
-                answer = count;
-                break;
-            }
+        while(queue.size()>1 && queue.peek()<K) {  
             int food1 = queue.poll();
-            if(queue.peek() == null) return -1;
             int food2 = queue.poll() * 2;
             int newFood = food1 + food2;
             queue.add(newFood);
             count++;
         }
+        answer = count;
+        
+        if(queue.peek()<K) answer = -1;
         
         return answer;
     }
