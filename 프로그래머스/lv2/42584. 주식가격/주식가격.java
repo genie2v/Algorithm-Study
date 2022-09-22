@@ -3,23 +3,19 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] prices) {
         int[] answer = new int[prices.length];
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
         
-        for(int price : prices) {
-            queue.add(price);
+        // 가격이 떨어지는 지점 계산
+        for(int i=0;i<prices.length;i++) {
+            while(!stack.empty() && prices[stack.peek()] > prices[i]) {
+                answer[stack.peek()] = i - stack.pop();
+            }
+            stack.push(i);
         }
         
-        int idx = 0;
-        while(!queue.isEmpty()) {
-            int time = 0;
-            int currentPrice = queue.peek();
-            for(int price : queue) {
-                time++;
-                if(price < currentPrice) break;
-            }
-            answer[idx] = time - 1;
-            idx++;
-            queue.poll(); 
+        // 가격이 떨어지지 않는 지점 계산
+        while(!stack.empty()) {
+            answer[stack.peek()] = prices.length - stack.pop() - 1;
         }
         
         return answer;
