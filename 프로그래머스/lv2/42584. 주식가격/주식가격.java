@@ -12,7 +12,6 @@ class Solution {
         int idx = 0;
         while(!queue.isEmpty()) {
             int time = 0;
-            Iterator iterator = queue.iterator();
             int currentPrice = queue.peek();
             for(int price : queue) {
                 time++;
