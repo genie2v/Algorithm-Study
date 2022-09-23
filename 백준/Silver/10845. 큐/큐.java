@@ -1,8 +1,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -12,13 +12,15 @@ public class Main {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 		int N = Integer.parseInt(stringTokenizer.nextToken());
-		Deque<Integer> queue = new ArrayDeque<>();
+		Queue<Integer> queue = new LinkedList<>();
+		int[] rear = new int[1];
 		
 		for(int i=0;i<N;i++) {
 			stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 			String word = stringTokenizer.nextToken();
 			if(stringTokenizer.hasMoreTokens()) {
 				int num = Integer.parseInt(stringTokenizer.nextToken());
+				rear[0] = num;
 				if(word.equals("push")) queue.add(num);
 			} else {
 				switch (word) {
@@ -34,11 +36,11 @@ public class Main {
 					else System.out.println(0);
 					break;
 				case "front":
-					if(!queue.isEmpty()) System.out.println(queue.peekFirst());
+					if(!queue.isEmpty()) System.out.println(queue.peek());
 					else System.out.println(-1);
 					break;
 				case "back":
-					if(!queue.isEmpty()) System.out.println(queue.peekLast());
+					if(!queue.isEmpty()) System.out.println(rear[0]);
 					else System.out.println(-1);
 					break;
 				default:
