@@ -1,0 +1,11 @@
+-- 코드를 입력하세요
+SELECT FLAVOR
+  FROM (SELECT A.FLAVOR
+             , A.TOTAL_ORDER + SUM(B.TOTAL_ORDER) AS TOTAL_ORDER
+             , RANK() OVER(ORDER BY A.TOTAL_ORDER + SUM(B.TOTAL_ORDER) DESC) AS RANK
+          FROM FIRST_HALF A
+               INNER JOIN JULY B
+                       ON A.FLAVOR = B.FLAVOR
+         GROUP BY A.FLAVOR, A.TOTAL_ORDER)
+ WHERE RANK <= 3
+         
