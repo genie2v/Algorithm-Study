@@ -1,6 +1,6 @@
 function solution(my_string, n) {
     var answer = '';
-    my_string.split('').forEach(i => {
+    [...my_string].forEach(i => {
         answer += i.repeat(n);
     })
     
