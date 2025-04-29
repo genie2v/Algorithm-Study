@@ -1,7 +1,4 @@
 function solution(n, t) {
-    var answer = n;
-    for (let i = 1; i <= t; i++) {
-        answer = answer * 2;
-    }
+    var answer = n * Math.pow(2,t);
     return answer;
 }
